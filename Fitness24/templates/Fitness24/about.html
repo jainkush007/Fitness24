@@ -1,0 +1,90 @@
+{% extends "Fitness24/base.html" %}
+{% load static %}
+{% block content %}
+   <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{% static 'img/breadcrumb/classes-breadcrumb.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>About</h2>
+                        <div class="breadcrumb-option">
+                            <a href="{% url 'Fitness24-home' %}"><i class="fa fa-home"></i> Home</a>
+                            <span>About</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- About Section Begin -->
+    <section class="about-section about-page spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-pic">
+                        <img src="{% static 'img/about-pic.jpg' %}" alt="">
+                        <a href="https://www.youtube.com/watch?v=SlPhMPnQ58k" class="play-btn video-popup">
+                            <img src="{% static 'img/play.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <h2>Story About Us</h2>
+                        <p class="first-para">Lorem ipsum proin gravida nibh vel velit auctor aliquet. Aenean pretium
+                            sollicitudin, nascetur auci elit consequat ipsutissem niuis sed odio sit amet nibh vulputate
+                            cursus a amet.</p>
+                        <p class="second-para">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, gravida
+                            quam semper libero sit amet.</p>
+                        <img src="{% static 'img/about-signature.png' %}" alt="">
+                        <div class="at-author">
+                            <h4>Fitness24</h4>
+                            <span>Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- About Counter Section Begin -->
+    <div class="about-counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="about-counter-text">
+                        <div class="single-counter">
+                            <h1 class="counter-num count">100</h1>
+                            <p>Programs</p>
+                        </div>
+                        <div class="single-counter">
+                            <h1 class="counter-num count">Worldwide</h1>
+                            <p>Locations</p>
+                        </div>
+                        <div class="single-counter">
+                            <h1 class="counter-num count">50</h1>
+                            <span>k+</span>
+                            <p>Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Counter Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+{% endblock content %}

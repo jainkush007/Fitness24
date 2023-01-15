@@ -1,0 +1,38 @@
+{% extends "Fitness24/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{% static 'img/breadcrumb/classes-breadcrumb.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Create Blog</h2>
+                        <div class="breadcrumb-option">
+                            <a href="{% url 'Fitness24-blog' %}"><i class="fa fa-home"></i> Blog</a>
+                            <span>New Blog</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+    <section>
+       <div class="container">
+            <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Fitness-Blogs</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="primary-btn" type="submit">Post</button>
+            </div>
+        </form>
+       </div>
+    </section>
+</div>
+{% endblock content %}

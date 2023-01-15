@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness24</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}" class="css">
+
+    <link href=" https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap "
+        rel="stylesheet ">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+
+
+</head>
+
+<body>
+
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <header class="header-section">
+        <div class="container">
+            <div class="logo" >
+                <a href="{% url 'Fitness24-home' %}">
+                    <img  src="{% static 'img/logof24.png' %}" alt="">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="{% url 'Fitness24-home' %}">Home</a></li>
+                        <li ><a href="#">Workout</a></li>
+                        <li><a href="#">Diet</a></li>
+                        <li><a href="{% url 'Fitness24-about' %}">About</a></li>
+                        <li><a href="{% url 'Fitness24-blog' %}">Blog</a></li>
+                    </ul>
+                </nav>
+                {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}" class="primary-btn signup-btn">Profile</a>
+                <a href="{% url 'logout' %}" class="primary-btn signup-btn">Logout</a>
+
+
+                {% else %}
+                <a href="{% url 'register' %}" class="primary-btn signup-btn">Register</a>
+                <a href="{% url 'login' %}" class="primary-btn signup-btn">Login</a>
+                {% endif %}
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End-->
+
+
+    {% block content %}
+    {% endblock%}
+
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>**********</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>AITR Indore,MP</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>contactcompany@Fitness24.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe-option set-bg" data-setbg="{% static 'img/footer-signup.jpg' %}">
+                <div class="so-text">
+                    <h4>Subscribe To Our Mailing List</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+
+  <script>document.write(new Date().getFullYear());</script>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

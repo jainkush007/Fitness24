@@ -1,0 +1,62 @@
+{% extends "Fitness24/base.html" %}
+{% load static %}
+{% block content %}
+
+ <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{% static 'img/breadcrumb/classes-breadcrumb.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Blog</h2>
+                        <div class="breadcrumb-option">
+                            <a href="{% url 'Fitness24-home' %}"><i class="fa fa-home"></i> Home</a>
+                            <span>Blog</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Blog Section Begin -->
+    <section class="blog-section spad">
+        <div class="container">
+            <div class="mid">
+            {% if user.is_authenticated %}
+            <a class="primary-btn" href="{% url 'post-create' %}">New Blog</a>
+            {% endif %}
+            </div>
+        </div>
+    </section>
+    {% for post in posts %}
+
+    <section class="about-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="about-pic">
+                    <article class="media content-section">
+                        <img class="rounded" alt="Cinque Terre" src="{{ post.author.profile.image.url }}">
+                    </article>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text">
+<!--                      <div class="media-body">-->
+                          <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+                        <div class="article-metadata">
+                          <a class="mr-5" >{{ post.author }}</a>
+                          <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                        </div>
+
+<!--                    <p class="article-content">{{ post.content }}</p>-->
+                    </div>
+                </div>
+<!--                    </article>-->
+
+            </div>
+        </div>
+    </section>
+
+{% endfor %}
+{% endblock content %}

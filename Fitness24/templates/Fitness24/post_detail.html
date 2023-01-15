@@ -1,0 +1,58 @@
+{% extends "Fitness24/base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="{% static 'img/breadcrumb/classes-breadcrumb.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <h2>Blogs</h2>
+                        <div class="breadcrumb-option">
+                            <a href="{% url 'Fitness24-blog' %}"><i class="fa fa-home"></i> Blog</a>
+                            <span> blog</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+    <section class="about-section spad">
+        <div class="container">
+            <div class="row">
+                    <div class="about-pic">
+                        <article class="media content-section">
+                            <img src="{{ object.author.profile.image.url }}" >
+                        </article>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="about-text">
+                            <div class="media-body">
+                                    <h2 class="article-title">{{ object.title }}</h2>
+                                    <div class="media-body">
+                                        <div class="article-metadata">
+                                          <a class="mr-2" href="#">{{ object.author }}</a>
+                                          <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                                          {% if object.author == user %}
+                                            <a class= "btn btn-secondary btn-sm mt-1" href="{% url 'post-update' object.id %}">Update</a>
+                                            <a class= "btn btn-secondary btn-sm mt-1" href="{% url 'post-delete' object.id %}">delete</a>
+                                          {% endif %}
+                                        </div>
+                                        </div>
+                                    <div>
+                                        <p >
+                                        </p>
+                                    </div>
+                                   </div>
+                                    <div>
+                                        <p class="article-content">{{ object.content }}</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
